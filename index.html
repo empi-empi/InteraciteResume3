@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Ryan L. Empistan | Developer Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="pic0.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+                scroll-behavior: smooth;
+            }
+            .font-mono {
+                font-family: 'JetBrains Mono', monospace;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen overflow-x-hidden">
+    <vertical-sidebar></vertical-sidebar>
+
+    <mobile-header></mobile-header>
+
+    <main class="md:ml-20 transition-all duration-300">
+        <section id="home" class="min-h-screen flex items-center px-6 md:px-12 lg:px-24 py-12 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+                <p class="text-blue-400 font-mono text-lg mb-4 opacity-0 animate-fadeIn" style="animation-delay: 0.2s;">Hello, I'm</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight opacity-0 animate-slideUp" style="animation-delay: 0.4s;">
+                    Joshua <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Empistan</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-300 mb-8 font-mono opacity-0 animate-fadeIn" style="animation-delay: 0.6s;">Developer</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mb-12 leading-relaxed opacity-0 animate-fadeIn" style="animation-delay: 0.8s;">
+                    Passionate about building innovative solutions and creating digital experiences. Focused on modern technologies and practical problem-solving.
+                </p>
+                <div class="flex flex-wrap gap-6 opacity-0 animate-fadeIn" style="animation-delay: 1s;">
+                    <a href="#projects" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 flex items-center gap-3 group">
+                        <span>View Projects</span>
+                        <i data-feather="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="border-2 border-gray-700 text-gray-300 px-8 py-4 rounded-lg font-semibold text-lg hover:border-blue-400 hover:text-blue-400 hover:bg-gray-900/50 transition-all duration-300 flex items-center gap-3 group">
+                        <span>Get In Touch</span>
+                        <i data-feather="send" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fadeIn" style="animation-delay: 1.5s;">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-gray-500 text-sm font-mono">Scroll</span>
+                    <div class="w-px h-16 bg-gradient-to-b from-blue-400 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="px-6 md:px-12 lg:px-24 py-24">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">01.</span>
+                    <span>About Me</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="md:col-span-2 space-y-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            I'm Joshua Ryan L. Empistan, a dedicated developer with a passion for creating elegant solutions to complex problems. I enjoy working with modern technologies and continuously learning new tools and frameworks.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            My focus is on building clean, efficient code and creating user-friendly applications. I'm committed to writing maintainable solutions that solve real-world problems effectively.
+                        </p>
+                        <div class="pt-6">
+                            <h3 class="text-xl font-semibold mb-4">What I'm Currently Focused On</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg font-mono text-sm">
+                                    Full-Stack Development
+                                </span>
+                                <span class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg font-mono text-sm">
+                                    AI/ML Integration
+                                </span>
+                                <span class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg font-mono text-sm">
+                                    Electronics Programming
+                                </span>
+                                <span class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg font-mono text-sm">
+                                    3D Web Experiences
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square rounded-2xl overflow-hidden border-2 border-gray-800">
+                            <img src="pic2.jpg" alt="Developer workspace" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="absolute -inset-4 border-2 border-blue-500/20 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="px-6 md:px-12 lg:px-24 py-24 bg-gradient-to-b from-gray-950 to-gray-900">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">02.</span>
+                    <span>Skills & Technologies</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="skills-card">
+                        <i data-feather="code" class="w-12 h-12 text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Programming & Logic</h3>
+                        <p class="text-gray-400 mb-4">Using code and logical thinking to solve problems and make systems work correctly</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Logic Gates</span>
+                            <span class="skill-badge">TTl ICs</span>
+                            <span class="skill-badge">Microcontrollers</span>
+                            <span class="skill-badge">Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <i data-feather="monitor" class="w-12 h-12 text-purple-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Engineering & Design</h3>
+                        <p class="text-gray-400 mb-4">Create, plan, and visualize engineering and 3D design projects.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">AutoCAD</span>
+                            <span class="skill-badge">SketchUp</span>
+                            <span class="skill-badge">FreeCAD</span>
+                            <span class="skill-badge">Fusion 360</span>
+                            <span class="skill-badge">SolidWorks</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <i data-feather="zap" class="w-12 h-12 text-green-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Simulation & Learning Tools</h3>
+                        <p class="text-gray-400 mb-4">Experiment, test, and understand concepts before applying them in real projects.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">Falstad</span>
+                            <span class="skill-badge">Tinkercad</span>
+                            <span class="skill-badge">Proteus</span>
+                            <span class="skill-badge">Multisim</span>
+                            <span class="skill-badge">LTSpice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="3d-experience" class="relative overflow-hidden py-24 bg-gradient-to-b from-gray-900 to-gray-950">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+                <div class="max-w-6xl">
+                    <h2 class="text-4xl font-bold mb-4 flex items-center gap-3">
+                        <span class="text-blue-400 font-mono text-lg">Experience</span>
+                        <span>Interactive 3D Showcase</span>
+                    </h2>
+                    <p class="text-gray-400 mb-12">Click on the skill markers around the 3D model to explore my expertise</p>
+                    
+                    <div id="viewer-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <div id="3d-viewer" class="relative w-full h-96 lg:h-[500px] rounded-xl overflow-hidden border-2 border-gray-800 bg-gray-950">
+                                <div id="loading-overlay" class="absolute inset-0 flex items-center justify-center bg-gray-950/80 z-20">
+                                    <div class="text-center">
+                                        <div class="w-12 h-12 border-4 border-gray-700 border-t-blue-400 rounded-full animate-spin mx-auto mb-4"></div>
+                                        <p class="text-gray-300">Loading 3D Experience...</p>
+                                    </div>
+                                </div>
+
+                                <div class="absolute top-4 right-4 flex gap-2 z-10">
+                                    <button id="toggle-rotation" class="bg-gray-800/80 hover:bg-gray-700 text-gray-200 p-3 rounded-lg transition-colors" title="Toggle rotation">
+                                        <i data-feather="pause" class="w-5 h-5"></i>
+                                    </button>
+                                    <button id="reset-view" class="bg-gray-800/80 hover:bg-gray-700 text-gray-200 p-3 rounded-lg transition-colors" title="Reset view">
+                                        <i data-feather="refresh-cw" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="sticky top-24 p-6 rounded-xl border-2 border-gray-800 bg-gray-900 h-96 lg:h-[500px] overflow-y-auto">
+                                <div id="skill-content" class="space-y-6">
+                                    <div class="text-center py-12">
+                                        <div class="text-blue-400 text-4xl mb-4">
+                                            <i data-feather="target" class="w-12 h-12 mx-auto"></i>
+                                        </div>
+                                        <p class="text-gray-400">Interact with the 3D model</p>
+                                        <p class="text-sm text-gray-500 mt-2">Click on the colored spheres around the model to view skill details</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="px-6 md:px-12 lg:px-24 py-24">
+            <div class="max-w-6xl">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">03.</span>
+                    <span>Featured Projects</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="pic1.png" alt="Ecovana X1">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Ecovana X1</h3>
+                            <p class="text-gray-400 mb-4">Designed 2D/3D off-grid house models with solar, rainwater, and gardening systems.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-tag">AutoCAD</span>
+                                <span class="tech-tag">SketchUp</span>
+                                <span class="tech-tag">Fusion 360</span>
+                                <span class="tech-tag">Solar Design</span>
+                            </div>
+                                <a href="https://drive.google.com/drive/folders/153ztLqbw8eVMvawH8CwfJi3e9LSAZ7Hi?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold flex items-center gap-2 group/link">
+                                <span>View Project</span>
+                                <i data-feather="external-link" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="pic.jpg" alt="Daemon">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Daemon Python Game</h3>
+                            <p class="text-gray-400 mb-4">A headless e-commerce platform with real-time inventory management and personalized recommendations.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pygame</span>
+                                <span class="tech-tag">Tiled</span>
+                                <span class="tech-tag">OOP</span>
+                            </div>
+                                <a href="https://github.com/empi-empi/Python-game" target="_blank" rel="noopener noreferrer" class="text-blue-400 font-semibold flex items-center gap-2 group/link">
+                                <span>View Project</span>
+                                <i data-feather="external-link" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="px-6 md:px-12 lg:px-24 py-24 bg-gradient-to-b from-gray-950 to-gray-900">
+            <div class="max-w-6xl">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">04.</span>
+                    <span>Education</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="mstip.jpg" alt="Makati Science Technological Institute of the Philippines">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Makati Science Technological Institute of the Philippines</h3>
+                            <p class="text-gray-400 mb-2"><strong>Sta. Mesa</strong></p>
+                            <p class="text-gray-400 mb-4">Bachelor of Science in Computer Engineering (2023 – 2024)</p>
+                        </div>
+                    </div>
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="pup.png" alt="Polytechnic University of the Philippines">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Polytechnic University of the Philippines</h3>
+                            <p class="text-gray-400 mb-2"><strong>Paranaque City Campus</strong></p>
+                            <p class="text-gray-400 mb-4">Bachelor of Science in Computer Engineering (2024 – 2025)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seminars" class="px-6 md:px-12 lg:px-24 py-24">
+            <div class="max-w-6xl">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">04.5</span>
+                    <span>Seminars & Webinars</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="44fc1f88-8666-47d8-94f2-357802dfd6ea.jpg" alt="Unlocking the Future of Computer Engineering">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Unlocking the Future of Computer Engineering</h3>
+                            <p class="text-gray-400 mb-4"><strong>2025</strong></p>
+                            <p class="text-gray-400 mb-4">Participated in a webinar that explored cutting-edge technologies such as AI, quantum computing, embedded systems, and sustainable tech, featuring expert insights on industry trends and applications.</p>
+                        </div>
+                    </div>
+                    <div class="project-card group">
+                        <div class="project-image">
+                            <img src="44fc1f88-8666-47d8-94f2-357802dfd6ea.jpg" alt="Empowering Innovation: Data Analytic for Machine Learning">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Empowering Innovation: Data Analytic for Machine Learning</h3>
+                            <p class="text-gray-400 mb-4"><strong>2025</strong></p>
+                            <p class="text-gray-400 mb-4">Participated in a webinar focused on data analytics and machine learning, highlighting Python-based models, Industry 4.0 integration, and the role of computer engineers in modern tech.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="px-6 md:px-12 lg:px-24 py-24">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-lg">05.</span>
+                    <span>Get In Touch</span>
+                    <div class="flex-1 h-px bg-gray-800"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Let's build something amazing together</h3>
+                        <p class="text-gray-400 mb-8">
+                            I'm currently available for freelance projects and full-time opportunities. Whether you have a project in mind or just want to connect, feel free to reach out.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                                    <i data-feather="mail" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Email</p>
+                                    <a href="mailto:empistan213@gmail.com" class="text-lg hover:text-blue-400 transition-colors">empistan213@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gray-900 flex items-center justify-center">
+                                    <i data-feather="github" class="w-6 h-6 text-gray-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">GitHub</p>
+                                    <a href="https://github.com" target="_blank" class="text-lg hover:text-blue-400 transition-colors">github.com/empi-empi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-xl hover:shadow-blue-900/30 hover:scale-105 transition-all duration-300 w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="px-6 md:px-12 lg:px-24 py-8 border-t border-gray-900">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-gray-500 font-mono text-sm">
+                    © 2024 Joshua Ryan L. Empistan. All code crafted with you hiring me on my mind.</i>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/empi-empi" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i data-feather="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/joshua-ryan-empistan" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i data-feather="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.facebook.com/empistanjr" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i data-feather="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:empistan213@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="components/sidebar.js"></script>
+    <script src="components/header.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
